@@ -71,6 +71,13 @@ var Stopwatch = function () {
             this.running = false;
             clearInterval(this.watch);
         }
+    }, {
+        key: 'resetTime',
+        value: function resetTime() {
+            this.running = false;
+            this.reset();
+            this.print();
+        }
     }]);
 
     return Stopwatch;
@@ -94,4 +101,9 @@ startButton.addEventListener('click', function () {
 var stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', function () {
     return stopwatch.stop();
+});
+
+var resetTimeButton = document.getElementById('resetTime');
+resetTimeButton.addEventListener('click', function () {
+    return stopwatch.resetTime();
 });

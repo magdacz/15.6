@@ -52,6 +52,12 @@ class Stopwatch {
         this.running = false;
         clearInterval(this.watch);
     }
+    
+    resetTime() {
+    this.running = false;
+    this.reset();
+    this.print();
+  }
 
 }
 
@@ -72,6 +78,9 @@ startButton.addEventListener('click', () => stopwatch.start());
 
 let stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', () => stopwatch.stop());
+
+let resetTimeButton = document.getElementById('resetTime');
+resetTimeButton.addEventListener('click', () => stopwatch.resetTime());
 
 
 
